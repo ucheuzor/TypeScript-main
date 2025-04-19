@@ -3,6 +3,12 @@ type Pizza = {
   price: number;
 };
 
+type Order = {
+  id: number;
+  pizza: Pizza;
+  status: string;
+};
+
 const menu = [
   { name: "Margherita", price: 8 },
   { name: "Pepperoni", price: 10 },
@@ -29,7 +35,7 @@ function placeOrder(pizzaName: string) {
     return;
   }
   cashInRegister += selectedPizza.price;
-  const newOrder = {
+  const newOrder: Order = {
     id: nextOrderId++,
     pizza: selectedPizza,
     status: "ordered",
