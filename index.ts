@@ -17,7 +17,7 @@ const menu = [
 ];
 
 let cashInRegister: number = 100;
-const orderQueue = [];
+const orderQueue: Order[] = [];
 let nextOrderId: number = 1;
 
 //write a function that add new pizza to the menu array
@@ -51,6 +51,9 @@ function placeOrder(pizzaName: string) {
 
 function completeOrder(orderId: number) {
   const order = orderQueue.find((order) => order.id === orderId);
+  if (!order) {
+    return;
+  }
   order.status = "completed";
   return order;
 }
