@@ -2,6 +2,8 @@
 let myName: string = "Uchenna Uzor";
 let numberOfWeels: number = 4;
 let isStudent: boolean = false;
+let ages: number[] = [34, 31, 28];
+ages.push(25);
 
 //custom types
 
@@ -34,6 +36,11 @@ let person2: Person = {
     country: "Nigeria",
   },
 };
+
+let allUsers: Person[] = [];
+
+allUsers.push(person1);
+allUsers.push(person2);
 
 function displayInfo(person: Person) {
   if (!person.address) {

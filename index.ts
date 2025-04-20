@@ -17,7 +17,7 @@ const menu = [
 ];
 
 let cashInRegister: number = 100;
-const orderQueue: Order[] = [];
+const orderHistory: Order[] = [];
 let nextOrderId: number = 1;
 
 //write a function that add new pizza to the menu array
@@ -40,7 +40,7 @@ function placeOrder(pizzaName: string) {
     pizza: selectedPizza,
     status: "ordered",
   };
-  orderQueue.push(newOrder);
+  orderHistory.push(newOrder);
   return newOrder;
 }
 
@@ -50,7 +50,7 @@ function placeOrder(pizzaName: string) {
  */
 
 function completeOrder(orderId: number) {
-  const order = orderQueue.find((order) => order.id === orderId);
+  const order = orderHistory.find((order) => order.id === orderId);
   if (!order) {
     return;
   }
@@ -69,4 +69,4 @@ completeOrder(12);
 
 console.log("Menu", menu);
 console.log("Cash in register", cashInRegister);
-console.log("Order queue", orderQueue);
+console.log("Order History", orderHistory);
